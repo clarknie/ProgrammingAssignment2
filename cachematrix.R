@@ -13,8 +13,11 @@ makeCacheMatrix <- function(x = matrix()) {
         x <<- y
         m <<- NULL
     }
+    # get function takes no argument, return x
     get <- function() x
+    # solve is a matrix that is used to set m(inverse) of this environment
     setsolve <- function(solve) m <<- solve
+    # getsolve function takes no argument, return m
     getsolve <- function() m
     list(set = set, get = get,
          setsolve = setsolve,
